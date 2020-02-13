@@ -49,7 +49,7 @@ with open("path_of_the_textfile_in_which-urls_were_saved", "r") as f:
                             print(url_item,"wm_similarity = ",wmsimilarity)
                             endtime = time.clock()
                             time_taken = endtime - start_time 
-      # writing the results to a csv file                       
+                            # writing these results to a csv file                       
                             file_exists = os.path.isfile(csv_filename)
                             with open(csv_filename, 'a', newline='') as trail_csvFile:
                                 column_names = ["url","List_Name","cos_sim","wmd_distance","wm_similarity","start_timestamp","time_taken"]
@@ -66,8 +66,6 @@ with open("path_of_the_textfile_in_which-urls_were_saved", "r") as f:
                         with open(save_not_crawled, 'a') as filehandle:
                             filehandle.write('%s\n' % each_url + str(ex))
                             pass # skip
-
                 print("done")
-
 counter += 1
 
