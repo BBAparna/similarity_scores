@@ -6,7 +6,7 @@ import os.path
 import csv
 import time
 from datetime import datetime 
-import configparse
+import configparser
 
 start_time = time.clock()
 timestamp = datetime.now().strftime("%Y_%m_%d=%H:%M:%S")
@@ -33,7 +33,7 @@ with open("path_of_the_textfile_in_which-urls_were_saved", "r") as f:
                         # saving all the urls that were not_crawled to a text file
                             with open(save_not_crawled, 'a') as filehandle:
                                 #for listitem in not_crawled:
-                                    filehandle.write('%s\n' % each_url + "Not enough content")
+                                 filehandle.write('%s\n' % each_url + "Not enough content")
                     else:
                         config = configparser.ConfigParser() 
                         config.read('listnames_as_tuple.ini')
@@ -58,11 +58,9 @@ with open("path_of_the_textfile_in_which-urls_were_saved", "r") as f:
                                     csv_writer.writeheader()                            
                                 csv_writer.writerow({'url':each_url,'List_Name':list_name,'cos_sim':cos_sim,'wmd_distance':sim_list_300,
                                 'wm_similarity':wmsimilarity,'start_timestamp':start_time,'time_taken':endtime})  
-                            
                 except Exception as ex:                     
                         #execption_message= str(ex)
                         print ('url passed no corpus found for url  ',each_url,"Exception ERROR -1 " + str(ex))
-
                         with open(save_not_crawled, 'a') as filehandle:
                             filehandle.write('%s\n' % each_url + str(ex))
                             pass # skip
