@@ -42,11 +42,11 @@ with open("path_of_the_textfile_in_which-urls_were_saved", "r") as f:
                             # print(list_name,list_values)
                             print(list_name)
                             cos_sim = counter_cosine_similarity(corpus,list_values)
-                            print(url_item,"cosine_similarity = ",cos_sim)
+                            print(each_url,"cosine_similarity = ",cos_sim)
                             sim_list_300=w2v_model_300.wmdistance(corpus,list_values)
-                            print(url_item,"wmd_distance = ",sim_list_300)
+                            print(each_url,"wmd_distance = ",sim_list_300)
                             wmsimilarity = 1/(1+sim_list_300)  # Similarity is the negative of the distance.
-                            print(url_item,"wm_similarity = ",wmsimilarity)
+                            print(each_url,"wm_similarity = ",wmsimilarity)
                             endtime = time.clock()
                             time_taken = endtime - start_time 
                             # writing these results to a csv file                       
