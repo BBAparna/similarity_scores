@@ -33,7 +33,7 @@ with open("path_of_the_textfile_in_which-urls_were_saved", "r") as f:
                         # saving all the urls that were not_crawled to a text file
                             with open(save_not_crawled, 'a') as filehandle:
                                 #for listitem in not_crawled:
-                                 filehandle.write('%s\n' % each_url + "Not enough content")
+                                 filehandle.write('%s\n' % each_url + "Not enough content" + "\n" )
                     else:
                         config = configparser.ConfigParser() 
                         config.read('listnames_as_tuple.ini')
@@ -60,7 +60,7 @@ with open("path_of_the_textfile_in_which-urls_were_saved", "r") as f:
                                 'wm_similarity':wmsimilarity,'start_timestamp':start_time,'time_taken':endtime})  
                 except Exception as ex:                     
                         #execption_message= str(ex)
-                        print ('url passed no corpus found for url  ',each_url,"Exception ERROR -1 " + str(ex))
+                        print ('url passed no corpus found for url  ',each_url,"Exception ERROR -1 " + str(ex)+ "\n")
                         with open(save_not_crawled, 'a') as filehandle:
                             filehandle.write('%s\n' % each_url + str(ex))
                             pass # skip
