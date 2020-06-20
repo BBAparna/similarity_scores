@@ -18,13 +18,13 @@ timestamp = datetime.now().strftime("%Y_%m_%d=%H:%M:%S")
 w2v_model_300= KeyedVectors.load_word2vec_format("model300.bin", binary=True)
 print("Model 300 loaded")
 # saving the not crawled url to a file with error message 
-save_not_crawled = "/home/gannu/Documents/n_crawled/not_crawled_filename"
+save_not_crawled = "path/n_crawled/not_crawled_filename"
 # save csv file to a loction on drive
-csv_filename = "/home/gannu/Documents/CSV_git_filename.csv"
+csv_filename = "path/CSV_filename.csv"
 # initialize the counter to run the loop
 counter = 0
 # opening the file in wich the urls were saved after cleaning file with Unicode
-with open("/home/gannu/Documents/gdrive_extract_text/more_files_filename", "r") as f:
+with open("path_filename", "r") as f:
             # spliting the urls from txt file line by line  and save to a variable
         temp_urls = (url.split() for url in f.readlines())
         for extract_list in temp_urls:
